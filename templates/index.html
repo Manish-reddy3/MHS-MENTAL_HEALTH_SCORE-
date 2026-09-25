@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MHS — Mental Health Score</title>
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,450;0,9..144,600;1,9..144,450&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-row">
+    <div class="mark-group">
+      <div class="mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="26" height="26">
+          <circle cx="16" cy="16" r="14.5" fill="none" stroke="currentColor" stroke-width="1.4"/>
+          <path d="M8 19 L12.5 12 L16 17 L20 9 L24 15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="wordmark">
+        <span class="wordmark-main">MHS</span>
+        <span class="wordmark-sub">Mental Health Score</span>
+      </div>
+    </div>
+    <span class="header-tag" id="header-clock">CASE FILE — LIVE</span>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <p class="eyebrow">Student wellness analytics</p>
+    <h1 class="hero-title">Mental Health <em>Signal</em></h1>
+    <p class="hero-sub">A quick read on how habits, screen time, sleep, activity and stress are trending — modeled from your daily rhythm, not a diagnosis.</p>
+  </section>
+
+  <form class="dossier" id="mhs-form" novalidate>
+
+    <div class="entry">
+      <div class="entry-index"><span>01</span>Profile</div>
+      <div class="entry-fields">
+        <div class="f-row">
+          <div class="f"><label for="age">Age</label><input type="number" id="age" name="Age" min="10" max="100" value="21" required></div>
+          <div class="f"><label for="gender">Gender</label>
+            <select id="gender" name="Gender" required><option value="Male">Male</option><option value="Female">Female</option></select>
+          </div>
+        </div>
+        <div class="f-row">
+          <div class="f"><label for="country">Country</label>
+            <select id="country" name="Country" required>
+              <option value="India">India</option><option value="USA">USA</option><option value="Canada">Canada</option>
+              <option value="Australia">Australia</option><option value="UK">UK</option><option value="Germany">Germany</option>
+              <option value="Mexico">Mexico</option><option value="Turkey">Turkey</option><option value="France">France</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="f"><label for="academic">Academic level</label>
+            <select id="academic" name="Academic_Level" required>
+              <option value="High School">High School</option><option value="Undergraduate" selected>Undergraduate</option><option value="Graduate">Graduate</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-index"><span>02</span>Digital habits</div>
+      <div class="entry-fields">
+        <div class="f-row">
+          <div class="f"><label for="platform">Most used platform</label>
+            <select id="platform" name="Most_Used_Platform" required>
+              <option>Instagram</option><option>YouTube</option><option>TikTok</option><option>WhatsApp</option>
+              <option>Facebook</option><option>Snapchat</option><option>Twitter</option><option>LinkedIn</option>
+              <option>WeChat</option><option>LINE</option><option>KakaoTalk</option><option>VKontakte</option>
+            </select>
+          </div>
+          <div class="f"><label for="purpose">Primary purpose</label>
+            <select id="purpose" name="Purpose_Of_Use" required>
+              <option>Entertainment</option><option>Education</option><option>Networking</option><option>News</option>
+            </select>
+          </div>
+        </div>
+        <div class="f slide"><label for="usage">Avg. daily usage <output for="usage" id="usage-out">4.5</output><span class="u">hrs</span></label>
+          <input type="range" id="usage" name="Avg_Daily_Usage_Hours" min="0" max="16" step="0.1" value="4.5"></div>
+        <div class="f slide"><label for="unlocks">Daily phone unlocks <output for="unlocks" id="unlocks-out">60</output></label>
+          <input type="range" id="unlocks" name="Daily_Unlocks" min="0" max="200" step="1" value="60"></div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-index"><span>03</span>Lifestyle</div>
+      <div class="entry-fields">
+        <div class="f slide"><label for="study">Study hours <output for="study" id="study-out">3.0</output><span class="u">/ day</span></label>
+          <input type="range" id="study" name="Study_Hours" min="0" max="14" step="0.1" value="3"></div>
+        <div class="f slide"><label for="activity">Physical activity <output for="activity" id="activity-out">1.0</output><span class="u">/ day</span></label>
+          <input type="range" id="activity" name="Physical_Activity_Hours" min="0" max="8" step="0.1" value="1"></div>
+        <div class="f slide"><label for="sleep">Sleep <output for="sleep" id="sleep-out">6.5</output><span class="u">/ night</span></label>
+          <input type="range" id="sleep" name="Sleep_Hours_Per_Night" min="0" max="12" step="0.1" value="6.5"></div>
+        <div class="f"><label for="stress">Self-rated stress</label>
+          <select id="stress" name="Stress_Level" required>
+            <option value="Low">Low</option><option value="Medium" selected>Medium</option><option value="High">High</option><option value="Very High">Very High</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry submit-row">
+      <div class="entry-index"></div>
+      <div class="entry-fields">
+        <button type="submit" class="submit-btn" id="submit-btn"><span>Read my signal</span></button>
+        <p class="disclaimer">MHS produces a modeled estimate for reflection, not a clinical assessment. If you're struggling, please talk to a counselor or someone you trust.</p>
+      </div>
+    </div>
+  </form>
+
+  <section class="printout" id="result-panel">
+    <div class="entry-index"><span>—</span>Reading</div>
+    <div class="printout-body-wrap">
+
+      <div id="result-idle" class="p-idle">
+        <svg viewBox="0 0 600 60" class="trace-flat" preserveAspectRatio="none"><line x1="0" y1="30" x2="600" y2="30"/></svg>
+        <p>Submit the form to print a reading.</p>
+      </div>
+
+      <div id="result-loading" class="p-loading" hidden>
+        <svg viewBox="0 0 600 60" class="trace-flat scanning" preserveAspectRatio="none"><line x1="0" y1="30" x2="600" y2="30"/></svg>
+        <p>Reading<span class="dots"><span>.</span><span>.</span><span>.</span></span></p>
+      </div>
+
+      <div id="result-body" class="p-body" hidden>
+        <svg viewBox="0 0 600 80" class="trace-svg" preserveAspectRatio="none">
+          <polyline id="trace-line" points="0,40" fill="none" stroke-width="2.5"/>
+        </svg>
+        <div class="p-meta">
+          <span class="p-score" id="gauge-score">–</span>
+          <span class="p-badge" id="result-classification">—</span>
+        </div>
+        <p class="result-note" id="result-note"></p>
+        <button class="reset-btn" id="reset-btn" type="button">Run again</button>
+      </div>
+
+      <div id="result-error" class="p-error" hidden>
+        <p class="error-title">Couldn't reach the model</p>
+        <p class="error-body" id="error-body">Make sure the FastAPI server is running at <code>127.0.0.1:2200</code>.</p>
+        <button class="reset-btn" id="error-retry" type="button">Try again</button>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="entry-index"><span>—</span>Notes</div>
+    <p class="about-text">MHS is trained on self-reported survey data covering usage patterns, sleep, study and activity habits, and stress across students in several countries. It surfaces a single directional score — a signal to notice trends in, not a substitute for professional support.</p>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-row">
+    <span>MHS · Mental Health Score</span>
+    <span class="footer-note">A wellbeing analytics project. Not a diagnostic tool.</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
