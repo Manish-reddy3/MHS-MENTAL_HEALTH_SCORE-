@@ -1,4 +1,4 @@
-const API_URL = "https://mhs-mental-health-score-oh4n.onrender.com";
+const API_URL = "https://mhs-mental-health-score-oh4n.onrender.com/predict";
 
 // ---- Adjust this to match your model's actual output scale ----
 const SCORE_MIN = 0;
