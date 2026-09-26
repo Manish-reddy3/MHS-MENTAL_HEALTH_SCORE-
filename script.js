@@ -1,4 +1,4 @@
-const API_URL = "https://mhs-mental-health-score-dqim.onrender.com";
+const API_URL = "http://127.0.0.1:8000";
 
 // ---- Adjust this to match your model's actual output scale ----
 const SCORE_MIN = 0;
