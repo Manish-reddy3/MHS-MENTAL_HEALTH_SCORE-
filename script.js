@@ -1,4 +1,4 @@
-const API_URL = "http://127.0.0.1:8000";
+const API_URL = "http://127.0.0.1:8000/predict";
 
 // ---- Adjust this to match your model's actual output scale ----
 const SCORE_MIN = 0;
@@ -106,8 +106,8 @@ async function submitAssessment(e) {
     renderResult(Number(result.predicted_class));
   } catch (err) {
     errorBody.textContent = err.name === "AbortError"
-      ? "The server didn't respond in time. Make sure it's running at 127.0.0.1:2200."
-      : (err.message && err.message.length < 160 ? err.message : "Make sure the FastAPI server is running at 127.0.0.1:2200.");
+      ? "The server didn't respond in time. Make sure it's running at 127.0.0.1:8000."
+      : (err.message && err.message.length < 160 ? err.message : "Make sure the FastAPI server is running at 127.0.0.1:8000.");
     showView(errorView);
   } finally {
     clearTimeout(timeout);
